@@ -1,0 +1,53 @@
+//
+//  YJSearchManager.m
+//  YJSearchControllerDemo
+//
+//  Created by 刘亚军 on 2019/4/2.
+//  Copyright © 2019 刘亚军. All rights reserved.
+//
+
+#import "YJSearchManager.h"
+#import "YJPresentSearchAnimation.h"
+#import "YJSearchMainViewController.h"
+#import "YJSearchBaseNavigationController.h"
+#import "YJSearchRecordManager.h"
+#import <YJExtensions/YJExtensions.h>
+
+@interface YJSearchManager ()<UIViewControllerTransitioningDelegate>
+
+@end
+@implementation YJSearchManager
++ (YJSearchManager *)defaultManager{
+    static YJSearchManager * macro = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        macro = [[YJSearchManager alloc]init];
+        [NSUserDefaults yj_setObject:@"YJSearchMainViewController" forKey:@"YJBundleClass"];
+        [NSUserDefaults yj_setObject:@"YJSearchController" forKey:@"YJBundleName"];
+    });
+    return macro;
+}
+- (void)setSearchControllerName:(NSString *)searchControllerName{
+    _searchControllerName = searchControllerName;
+    [YJSearchRecordManager defaultManager].searchControllerName = searchControllerName;
+}
+- (float)presentOffsety{
+    if (_presentOffsetY == 0) {
+        return 100;
+    }
+    return _presentOffsetY;
+}
+
+- (void)presentSearchControllerBy:(UIViewController *)controller{
+    YJSearchMainViewController *sMain = [[YJSearchMainViewController alloc] init];
+    YJSearchBaseNavigationController *sNaviBar = [[YJSearchBaseNavigationController alloc] initWithRootViewController:sMain];
+    sNaviBar.transitioningDelegate = self;
+    [controller presentViewController:sNaviBar animated:YES completion:nil];
+}
+#pragma mark UIViewControllerTransitioningDelegate
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+    YJPresentSearchAnimation *leftPresentAnimation = [[YJPresentSearchAnimation alloc] init];
+    leftPresentAnimation.presentOffsetY = self.presentOffsetY;
+    return leftPresentAnimation;
+}
+@end

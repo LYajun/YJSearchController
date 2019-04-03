@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		492F9F1ABDD14EAE0467144D /* Pods_YJSearchControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209036A78402783842A2D319 /* Pods_YJSearchControllerDemo.framework */; };
+		BA21818F22530017009DE9F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21818E22530017009DE9F4 /* AppDelegate.m */; };
+		BA21819222530017009DE9F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21819122530017009DE9F4 /* ViewController.m */; };
+		BA21819522530017009DE9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA21819322530017009DE9F4 /* Main.storyboard */; };
+		BA2181972253001A009DE9F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA2181962253001A009DE9F4 /* Assets.xcassets */; };
+		BA21819A2253001A009DE9F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA2181982253001A009DE9F4 /* LaunchScreen.storyboard */; };
+		BA21819D2253001A009DE9F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21819C2253001A009DE9F4 /* main.m */; };
+		BA2181A5225303BA009DE9F4 /* YJSearchController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA2181A4225303BA009DE9F4 /* YJSearchController.bundle */; };
+		BA2181B62253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181AA2253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m */; };
+		BA2181B82253056F009DE9F4 /* YJPinyinHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181AF2253056F009DE9F4 /* YJPinyinHelper.m */; };
+		BA2181B92253056F009DE9F4 /* YJChineseInclude.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181B12253056F009DE9F4 /* YJChineseInclude.m */; };
+		BA2181BA2253056F009DE9F4 /* YJHanyuPinyinOutputFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181B22253056F009DE9F4 /* YJHanyuPinyinOutputFormat.m */; };
+		BA2181BB2253056F009DE9F4 /* YJChineseToPinyinResource.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181B32253056F009DE9F4 /* YJChineseToPinyinResource.m */; };
+		BA2181BC2253056F009DE9F4 /* YJPinyinFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181B42253056F009DE9F4 /* YJPinyinFormatter.m */; };
+		BA2181BD2253056F009DE9F4 /* YJPinYinForObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181B52253056F009DE9F4 /* YJPinYinForObjc.m */; };
+		BA2181C02253089A009DE9F4 /* YJPresentSearchAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181BF2253089A009DE9F4 /* YJPresentSearchAnimation.m */; };
+		BA2181C722530B65009DE9F4 /* YJSearchMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181C622530B65009DE9F4 /* YJSearchMainViewController.m */; };
+		BA2181CB22531226009DE9F4 /* YJSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181CA22531226009DE9F4 /* YJSearchManager.m */; };
+		BA2181CE22532D98009DE9F4 /* YJSearchBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181CD22532D98009DE9F4 /* YJSearchBaseNavigationController.m */; };
+		BA2181D122532DAD009DE9F4 /* YJSearchBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181D022532DAD009DE9F4 /* YJSearchBaseViewController.m */; };
+		BA2181D422533158009DE9F4 /* YJSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181D322533158009DE9F4 /* YJSearchBar.m */; };
+		BA2181D722533356009DE9F4 /* YJSearchMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181D622533356009DE9F4 /* YJSearchMatchViewController.m */; };
+		BA2181DA2253336C009DE9F4 /* YJSearchRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181D92253336C009DE9F4 /* YJSearchRecordViewController.m */; };
+		BA2181DD225338FF009DE9F4 /* YJSearchRecordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181DC225338FF009DE9F4 /* YJSearchRecordManager.m */; };
+		BA2181E0225339A7009DE9F4 /* YJSearchBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181DE225339A6009DE9F4 /* YJSearchBaseTableViewCell.m */; };
+		BA2181E32253503C009DE9F4 /* YJSearchRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181E22253503C009DE9F4 /* YJSearchRecordCell.m */; };
+		BA2181E622535081009DE9F4 /* YJSearchRecordFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2181E522535081009DE9F4 /* YJSearchRecordFooterView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		209036A78402783842A2D319 /* Pods_YJSearchControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YJSearchControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B86B8AB068B22E1167DCDCAC /* Pods-YJSearchControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJSearchControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BA21818A22530017009DE9F4 /* YJSearchControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJSearchControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA21818D22530017009DE9F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA21818E22530017009DE9F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA21819022530017009DE9F4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BA21819122530017009DE9F4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA21819422530017009DE9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA2181962253001A009DE9F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA2181992253001A009DE9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA21819B2253001A009DE9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA21819C2253001A009DE9F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BA2181A4225303BA009DE9F4 /* YJSearchController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YJSearchController.bundle; sourceTree = "<group>"; };
+		BA2181A72253056F009DE9F4 /* YJPinyinHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPinyinHelper.h; sourceTree = "<group>"; };
+		BA2181A82253056F009DE9F4 /* YJHanyuPinyinOutputFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJHanyuPinyinOutputFormat.h; sourceTree = "<group>"; };
+		BA2181A92253056F009DE9F4 /* YJChineseInclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJChineseInclude.h; sourceTree = "<group>"; };
+		BA2181AA2253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YJPinYin4Cocoa.m"; sourceTree = "<group>"; };
+		BA2181AC2253056F009DE9F4 /* YJChineseToPinyinResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJChineseToPinyinResource.h; sourceTree = "<group>"; };
+		BA2181AD2253056F009DE9F4 /* YJPinYinForObjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPinYinForObjc.h; sourceTree = "<group>"; };
+		BA2181AE2253056F009DE9F4 /* YJPinyinFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPinyinFormatter.h; sourceTree = "<group>"; };
+		BA2181AF2253056F009DE9F4 /* YJPinyinHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPinyinHelper.m; sourceTree = "<group>"; };
+		BA2181B02253056F009DE9F4 /* NSString+YJPinYin4Cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YJPinYin4Cocoa.h"; sourceTree = "<group>"; };
+		BA2181B12253056F009DE9F4 /* YJChineseInclude.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJChineseInclude.m; sourceTree = "<group>"; };
+		BA2181B22253056F009DE9F4 /* YJHanyuPinyinOutputFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJHanyuPinyinOutputFormat.m; sourceTree = "<group>"; };
+		BA2181B32253056F009DE9F4 /* YJChineseToPinyinResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJChineseToPinyinResource.m; sourceTree = "<group>"; };
+		BA2181B42253056F009DE9F4 /* YJPinyinFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPinyinFormatter.m; sourceTree = "<group>"; };
+		BA2181B52253056F009DE9F4 /* YJPinYinForObjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPinYinForObjc.m; sourceTree = "<group>"; };
+		BA2181BE2253089A009DE9F4 /* YJPresentSearchAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPresentSearchAnimation.h; sourceTree = "<group>"; };
+		BA2181BF2253089A009DE9F4 /* YJPresentSearchAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPresentSearchAnimation.m; sourceTree = "<group>"; };
+		BA2181C522530B65009DE9F4 /* YJSearchMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchMainViewController.h; sourceTree = "<group>"; };
+		BA2181C622530B65009DE9F4 /* YJSearchMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchMainViewController.m; sourceTree = "<group>"; };
+		BA2181C922531226009DE9F4 /* YJSearchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchManager.h; sourceTree = "<group>"; };
+		BA2181CA22531226009DE9F4 /* YJSearchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchManager.m; sourceTree = "<group>"; };
+		BA2181CC22532D98009DE9F4 /* YJSearchBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchBaseNavigationController.h; sourceTree = "<group>"; };
+		BA2181CD22532D98009DE9F4 /* YJSearchBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchBaseNavigationController.m; sourceTree = "<group>"; };
+		BA2181CF22532DAD009DE9F4 /* YJSearchBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchBaseViewController.h; sourceTree = "<group>"; };
+		BA2181D022532DAD009DE9F4 /* YJSearchBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchBaseViewController.m; sourceTree = "<group>"; };
+		BA2181D222533157009DE9F4 /* YJSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSearchBar.h; sourceTree = "<group>"; };
+		BA2181D322533158009DE9F4 /* YJSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSearchBar.m; sourceTree = "<group>"; };
+		BA2181D522533356009DE9F4 /* YJSearchMatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchMatchViewController.h; sourceTree = "<group>"; };
+		BA2181D622533356009DE9F4 /* YJSearchMatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchMatchViewController.m; sourceTree = "<group>"; };
+		BA2181D82253336C009DE9F4 /* YJSearchRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordViewController.h; sourceTree = "<group>"; };
+		BA2181D92253336C009DE9F4 /* YJSearchRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordViewController.m; sourceTree = "<group>"; };
+		BA2181DB225338FF009DE9F4 /* YJSearchRecordManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordManager.h; sourceTree = "<group>"; };
+		BA2181DC225338FF009DE9F4 /* YJSearchRecordManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordManager.m; sourceTree = "<group>"; };
+		BA2181DE225339A6009DE9F4 /* YJSearchBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSearchBaseTableViewCell.m; sourceTree = "<group>"; };
+		BA2181DF225339A6009DE9F4 /* YJSearchBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSearchBaseTableViewCell.h; sourceTree = "<group>"; };
+		BA2181E12253503C009DE9F4 /* YJSearchRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordCell.h; sourceTree = "<group>"; };
+		BA2181E22253503C009DE9F4 /* YJSearchRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordCell.m; sourceTree = "<group>"; };
+		BA2181E422535081009DE9F4 /* YJSearchRecordFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordFooterView.h; sourceTree = "<group>"; };
+		BA2181E522535081009DE9F4 /* YJSearchRecordFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordFooterView.m; sourceTree = "<group>"; };
+		C65E1A36E3DC091E59B6BC7B /* Pods-YJSearchControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJSearchControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA21818722530017009DE9F4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				492F9F1ABDD14EAE0467144D /* Pods_YJSearchControllerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA21818122530017009DE9F4 = {
+			isa = PBXGroup;
+			children = (
+				BA2181A32253037A009DE9F4 /* YJSearchController */,
+				BA21818C22530017009DE9F4 /* YJSearchControllerDemo */,
+				BA21818B22530017009DE9F4 /* Products */,
+				BBBD29F5E94331C6003A18D2 /* Pods */,
+				F3A4699E624D244911862FD8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BA21818B22530017009DE9F4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA21818A22530017009DE9F4 /* YJSearchControllerDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA21818C22530017009DE9F4 /* YJSearchControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				BA21818D22530017009DE9F4 /* AppDelegate.h */,
+				BA21818E22530017009DE9F4 /* AppDelegate.m */,
+				BA21819022530017009DE9F4 /* ViewController.h */,
+				BA21819122530017009DE9F4 /* ViewController.m */,
+				BA21819322530017009DE9F4 /* Main.storyboard */,
+				BA2181962253001A009DE9F4 /* Assets.xcassets */,
+				BA2181982253001A009DE9F4 /* LaunchScreen.storyboard */,
+				BA21819B2253001A009DE9F4 /* Info.plist */,
+				BA21819C2253001A009DE9F4 /* main.m */,
+			);
+			path = YJSearchControllerDemo;
+			sourceTree = "<group>";
+		};
+		BA2181A32253037A009DE9F4 /* YJSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181C822531200009DE9F4 /* Public */,
+				BA2181C422530B1E009DE9F4 /* Base */,
+				BA2181C322530AF3009DE9F4 /* Match */,
+				BA2181C222530AED009DE9F4 /* Record */,
+				BA2181C122530AE6009DE9F4 /* Main */,
+				BA2181A62253056F009DE9F4 /* PinYin */,
+				BA2181A4225303BA009DE9F4 /* YJSearchController.bundle */,
+			);
+			path = YJSearchController;
+			sourceTree = "<group>";
+		};
+		BA2181A62253056F009DE9F4 /* PinYin */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181A92253056F009DE9F4 /* YJChineseInclude.h */,
+				BA2181B12253056F009DE9F4 /* YJChineseInclude.m */,
+				BA2181AC2253056F009DE9F4 /* YJChineseToPinyinResource.h */,
+				BA2181B32253056F009DE9F4 /* YJChineseToPinyinResource.m */,
+				BA2181A82253056F009DE9F4 /* YJHanyuPinyinOutputFormat.h */,
+				BA2181B22253056F009DE9F4 /* YJHanyuPinyinOutputFormat.m */,
+				BA2181B02253056F009DE9F4 /* NSString+YJPinYin4Cocoa.h */,
+				BA2181AA2253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m */,
+				BA2181AE2253056F009DE9F4 /* YJPinyinFormatter.h */,
+				BA2181B42253056F009DE9F4 /* YJPinyinFormatter.m */,
+				BA2181AD2253056F009DE9F4 /* YJPinYinForObjc.h */,
+				BA2181B52253056F009DE9F4 /* YJPinYinForObjc.m */,
+				BA2181A72253056F009DE9F4 /* YJPinyinHelper.h */,
+				BA2181AF2253056F009DE9F4 /* YJPinyinHelper.m */,
+			);
+			path = PinYin;
+			sourceTree = "<group>";
+		};
+		BA2181C122530AE6009DE9F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181C522530B65009DE9F4 /* YJSearchMainViewController.h */,
+				BA2181C622530B65009DE9F4 /* YJSearchMainViewController.m */,
+				BA2181D222533157009DE9F4 /* YJSearchBar.h */,
+				BA2181D322533158009DE9F4 /* YJSearchBar.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BA2181C222530AED009DE9F4 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181D82253336C009DE9F4 /* YJSearchRecordViewController.h */,
+				BA2181D92253336C009DE9F4 /* YJSearchRecordViewController.m */,
+				BA2181E422535081009DE9F4 /* YJSearchRecordFooterView.h */,
+				BA2181E522535081009DE9F4 /* YJSearchRecordFooterView.m */,
+				BA2181E12253503C009DE9F4 /* YJSearchRecordCell.h */,
+				BA2181E22253503C009DE9F4 /* YJSearchRecordCell.m */,
+				BA2181DB225338FF009DE9F4 /* YJSearchRecordManager.h */,
+				BA2181DC225338FF009DE9F4 /* YJSearchRecordManager.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		BA2181C322530AF3009DE9F4 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181D522533356009DE9F4 /* YJSearchMatchViewController.h */,
+				BA2181D622533356009DE9F4 /* YJSearchMatchViewController.m */,
+			);
+			path = Match;
+			sourceTree = "<group>";
+		};
+		BA2181C422530B1E009DE9F4 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181CC22532D98009DE9F4 /* YJSearchBaseNavigationController.h */,
+				BA2181CD22532D98009DE9F4 /* YJSearchBaseNavigationController.m */,
+				BA2181CF22532DAD009DE9F4 /* YJSearchBaseViewController.h */,
+				BA2181D022532DAD009DE9F4 /* YJSearchBaseViewController.m */,
+				BA2181DF225339A6009DE9F4 /* YJSearchBaseTableViewCell.h */,
+				BA2181DE225339A6009DE9F4 /* YJSearchBaseTableViewCell.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		BA2181C822531200009DE9F4 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BA2181C922531226009DE9F4 /* YJSearchManager.h */,
+				BA2181CA22531226009DE9F4 /* YJSearchManager.m */,
+				BA2181BE2253089A009DE9F4 /* YJPresentSearchAnimation.h */,
+				BA2181BF2253089A009DE9F4 /* YJPresentSearchAnimation.m */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		BBBD29F5E94331C6003A18D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B86B8AB068B22E1167DCDCAC /* Pods-YJSearchControllerDemo.debug.xcconfig */,
+				C65E1A36E3DC091E59B6BC7B /* Pods-YJSearchControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3A4699E624D244911862FD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				209036A78402783842A2D319 /* Pods_YJSearchControllerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA21818922530017009DE9F4 /* YJSearchControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA2181A02253001A009DE9F4 /* Build configuration list for PBXNativeTarget "YJSearchControllerDemo" */;
+			buildPhases = (
+				3D7449C9CD9FEBFE954F18DC /* [CP] Check Pods Manifest.lock */,
+				BA21818622530017009DE9F4 /* Sources */,
+				BA21818722530017009DE9F4 /* Frameworks */,
+				BA21818822530017009DE9F4 /* Resources */,
+				1BD285B5695AD428878D30F3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YJSearchControllerDemo;
+			productName = YJSearchControllerDemo;
+			productReference = BA21818A22530017009DE9F4 /* YJSearchControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA21818222530017009DE9F4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "刘亚军";
+				TargetAttributes = {
+					BA21818922530017009DE9F4 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BA21818522530017009DE9F4 /* Build configuration list for PBXProject "YJSearchControllerDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA21818122530017009DE9F4;
+			productRefGroup = BA21818B22530017009DE9F4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA21818922530017009DE9F4 /* YJSearchControllerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA21818822530017009DE9F4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA21819A2253001A009DE9F4 /* LaunchScreen.storyboard in Resources */,
+				BA2181972253001A009DE9F4 /* Assets.xcassets in Resources */,
+				BA2181A5225303BA009DE9F4 /* YJSearchController.bundle in Resources */,
+				BA21819522530017009DE9F4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BD285B5695AD428878D30F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LGAlertHUD/LGAlertHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/TFHpple/TFHpple.framework",
+				"${BUILT_PRODUCTS_DIR}/YJExtensions/YJExtensions.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGAlertHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TFHpple.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YJExtensions.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D7449C9CD9FEBFE954F18DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YJSearchControllerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA21818622530017009DE9F4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2181D122532DAD009DE9F4 /* YJSearchBaseViewController.m in Sources */,
+				BA2181B92253056F009DE9F4 /* YJChineseInclude.m in Sources */,
+				BA2181B82253056F009DE9F4 /* YJPinyinHelper.m in Sources */,
+				BA21819222530017009DE9F4 /* ViewController.m in Sources */,
+				BA2181B62253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m in Sources */,
+				BA2181C722530B65009DE9F4 /* YJSearchMainViewController.m in Sources */,
+				BA2181D422533158009DE9F4 /* YJSearchBar.m in Sources */,
+				BA2181E32253503C009DE9F4 /* YJSearchRecordCell.m in Sources */,
+				BA2181D722533356009DE9F4 /* YJSearchMatchViewController.m in Sources */,
+				BA2181CE22532D98009DE9F4 /* YJSearchBaseNavigationController.m in Sources */,
+				BA21819D2253001A009DE9F4 /* main.m in Sources */,
+				BA2181BB2253056F009DE9F4 /* YJChineseToPinyinResource.m in Sources */,
+				BA2181CB22531226009DE9F4 /* YJSearchManager.m in Sources */,
+				BA2181DA2253336C009DE9F4 /* YJSearchRecordViewController.m in Sources */,
+				BA2181BD2253056F009DE9F4 /* YJPinYinForObjc.m in Sources */,
+				BA21818F22530017009DE9F4 /* AppDelegate.m in Sources */,
+				BA2181BC2253056F009DE9F4 /* YJPinyinFormatter.m in Sources */,
+				BA2181E622535081009DE9F4 /* YJSearchRecordFooterView.m in Sources */,
+				BA2181BA2253056F009DE9F4 /* YJHanyuPinyinOutputFormat.m in Sources */,
+				BA2181E0225339A7009DE9F4 /* YJSearchBaseTableViewCell.m in Sources */,
+				BA2181DD225338FF009DE9F4 /* YJSearchRecordManager.m in Sources */,
+				BA2181C02253089A009DE9F4 /* YJPresentSearchAnimation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BA21819322530017009DE9F4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA21819422530017009DE9F4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA2181982253001A009DE9F4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA2181992253001A009DE9F4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA21819E2253001A009DE9F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BA21819F2253001A009DE9F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA2181A12253001A009DE9F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B86B8AB068B22E1167DCDCAC /* Pods-YJSearchControllerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z35S33J39R;
+				INFOPLIST_FILE = YJSearchControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.YJSearchControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA2181A22253001A009DE9F4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C65E1A36E3DC091E59B6BC7B /* Pods-YJSearchControllerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z35S33J39R;
+				INFOPLIST_FILE = YJSearchControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.YJSearchControllerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA21818522530017009DE9F4 /* Build configuration list for PBXProject "YJSearchControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA21819E2253001A009DE9F4 /* Debug */,
+				BA21819F2253001A009DE9F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA2181A02253001A009DE9F4 /* Build configuration list for PBXNativeTarget "YJSearchControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2181A12253001A009DE9F4 /* Debug */,
+				BA2181A22253001A009DE9F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA21818222530017009DE9F4 /* Project object */;
+}

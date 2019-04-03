@@ -1,0 +1,8 @@
+platform :ios,'8.0'
+use_frameworks!
+
+target 'YJSearchControllerDemo’ do
+pod 'Masonry'
+pod 'LGAlertHUD'
+pod 'YJExtensions', '1.0.5'
+end
