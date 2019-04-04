@@ -9,7 +9,7 @@
 #import "YJSearchBar.h"
 
 #import <YJExtensions/YJExtensions.h>
-
+#import "YJSearchManager.h"
 
 @interface YJSearchBar ()
 /** 搜索内容 */
@@ -26,14 +26,14 @@
 }
 - (void)config{
     self.inputAccessoryView = self.customAccessoryView;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage yj_imageNamed:@"icon_search"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage yj_imageNamed:@"icon_search" atBundle:[YJSearchManager defaultManager].searchBundle]];
     imageView.contentMode = UIViewContentModeCenter;
     CGRect frame = imageView.frame;
     frame.size.width = imageView.frame.size.width + 20;
     imageView.frame = frame;
     self.backgroundColor = [UIColor whiteColor];
     self.tintColor = [UIColor lightGrayColor];
-    self.placeholder = @"请输入搜索关键字...";
+    self.placeholder = [YJSearchManager defaultManager].searchPlaceholder;
     self.font = [UIFont systemFontOfSize:14];
     self.layer.cornerRadius = self.frame.size.height/2;
     self.layer.masksToBounds = YES;

@@ -11,25 +11,25 @@
 
 @implementation UIImage (YJ)
 #pragma mark - Bundle资源
-+ (UIImage *)yj_imageNamed:(NSString *)name{
-    return [self yj_imageNamed:name atDir:nil];
++ (UIImage *)yj_imageNamed:(NSString *)name atBundle:(nonnull NSBundle *)bundle{
+    return [self yj_imageNamed:name atDir:nil atBundle:bundle];
 }
-+ (UIImage *)yj_imageNamed:(NSString *)name atDir:(NSString *)dir{
++ (UIImage *)yj_imageNamed:(NSString *)name atDir:(NSString *)dir atBundle:(nonnull NSBundle *)bundle{
     NSString *namePath = name;
     if (dir && dir.length > 0) {
         namePath = [dir stringByAppendingPathComponent:namePath];
     }
-    return [UIImage imageNamed:[NSBundle yj_bundlePathWithName:namePath]];
+    return [UIImage imageNamed:[bundle yj_bundlePathWithName:namePath]];
 }
-+ (UIImage *)yj_imagePathName:(NSString *)name{
-    return [UIImage imageWithContentsOfFile:[NSBundle yj_bundlePathWithName:name]];
++ (UIImage *)yj_imagePathName:(NSString *)name atBundle:(nonnull NSBundle *)bundle{
+    return [UIImage imageWithContentsOfFile:[bundle yj_bundlePathWithName:name]];
 }
-+ (UIImage *)yj_animatedImageNamed:(NSString *)name atDir:(NSString *)dir duration:(NSInteger)duration{
++ (UIImage *)yj_animatedImageNamed:(NSString *)name atDir:(NSString *)dir duration:(NSInteger)duration atBundle:(nonnull NSBundle *)bundle{
     NSString *namePath = name;
     if (dir && dir.length > 0) {
         namePath = [dir stringByAppendingPathComponent:namePath];
     }
-    return [UIImage animatedImageNamed:[NSBundle yj_bundlePathWithName:namePath] duration:duration];
+    return [UIImage animatedImageNamed:[bundle yj_bundlePathWithName:namePath] duration:duration];
 }
 
 #pragma mark - UIView转UIImage

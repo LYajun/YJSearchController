@@ -8,6 +8,7 @@
 
 #import "YJSearchBaseNavigationController.h"
 #import <YJExtensions/YJExtensions.h>
+#import "YJSearchManager.h"
 
 @interface YJSearchBaseNavigationController ()
 
@@ -19,13 +20,16 @@
     [super viewDidLoad];
     [self customInit];
 }
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 - (void)customInit{
     self.navigationBar.translucent = NO;
     NSString *imageName = @"lg_navBar_bg";
     if ([self.view yj_isIPhoneX]) {
         imageName = @"lg_navBar_bg_x";
     }
-    [self.navigationBar setBackgroundImage:[UIImage yj_imageNamed:imageName]
+    [self.navigationBar setBackgroundImage:[UIImage yj_imageNamed:imageName atBundle:[YJSearchManager defaultManager].searchBundle]
                              forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.tintColor = [UIColor whiteColor];
     NSDictionary *titleAttr = @{NSForegroundColorAttributeName:[UIColor whiteColor],

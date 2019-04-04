@@ -52,7 +52,8 @@ static inline NSString* cachePathForKey(NSString* directory, NSString* key) {
     if (dataMap) {
         self->_unicodeToHanyuPinyinTable=dataMap;
     }else{
-        NSString *resourceName = [NSBundle yj_bundlePathWithName:@"unicode_to_hanyu_pinyin.txt"];
+        NSBundle *bundle = [NSBundle yj_bundleWithCustomClass:self.class bundleName:@"YJSearchController"];
+        NSString *resourceName = [bundle yj_bundlePathWithName:@"unicode_to_hanyu_pinyin.txt"];
 //        [[NSBundle mainBundle] pathForResource:@"unicode_to_hanyu_pinyin" ofType:@"txt"];
         NSString *dictionaryText=[NSString stringWithContentsOfFile:resourceName encoding:NSUTF8StringEncoding error:nil];
         NSArray *lines = [dictionaryText componentsSeparatedByString:@"\r\n"];

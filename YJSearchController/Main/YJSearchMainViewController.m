@@ -42,6 +42,7 @@
     self.searchBar.text = [YJSearchManager defaultManager].searchStr;
     if ([YJSearchManager defaultManager].searchStr.length > 0) {
         self.matchVC.searchStr = [YJSearchManager defaultManager].searchStr;
+        [self.scrollView layoutIfNeeded];
         self.scrollView.contentOffset = CGPointMake([UIScreen mainScreen].bounds.size.width, 0);
     }else{
         self.scrollView.contentOffset = CGPointZero;

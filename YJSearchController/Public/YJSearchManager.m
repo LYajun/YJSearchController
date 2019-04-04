@@ -14,7 +14,7 @@
 #import <YJExtensions/YJExtensions.h>
 
 @interface YJSearchManager ()<UIViewControllerTransitioningDelegate>
-
+@property (nonatomic,strong) NSBundle *sBundle;
 @end
 @implementation YJSearchManager
 + (YJSearchManager *)defaultManager{
@@ -22,8 +22,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         macro = [[YJSearchManager alloc]init];
-        [NSUserDefaults yj_setObject:@"YJSearchMainViewController" forKey:@"YJBundleClass"];
-        [NSUserDefaults yj_setObject:@"YJSearchController" forKey:@"YJBundleName"];
+        macro.sBundle = [NSBundle yj_bundleWithCustomClass:YJSearchMainViewController.class bundleName:@"YJSearchController"];
     });
     return macro;
 }
@@ -37,7 +36,15 @@
     }
     return _presentOffsetY;
 }
-
+- (NSBundle *)searchBundle{
+    return _sBundle;
+}
+- (NSString *)searchPlaceholder{
+    if (!_searchPlaceholder || _searchPlaceholder.length == 0) {
+        return @"请输入关键字搜索...";
+    }
+    return _searchPlaceholder;
+}
 - (void)presentSearchControllerBy:(UIViewController *)controller{
     YJSearchMainViewController *sMain = [[YJSearchMainViewController alloc] init];
     YJSearchBaseNavigationController *sNaviBar = [[YJSearchBaseNavigationController alloc] initWithRootViewController:sMain];

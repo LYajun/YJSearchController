@@ -9,6 +9,7 @@
 #import "YJSearchBaseViewController.h"
 #import <Masonry/Masonry.h>
 #import <YJExtensions/YJExtensions.h>
+#import "YJSearchManager.h"
 
 @interface YJSearchBaseViewController ()
 /** 没有数据 */
@@ -27,6 +28,7 @@
     [super viewDidLoad];
      [self initUI];
 }
+
 - (void)dealloc{
     NSLog(@"%@ --dealloc",NSStringFromClass(self.class));
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -76,7 +78,7 @@
     if (!_viewNoData) {
         _viewNoData = [[UIView alloc]init];
         _viewNoData.backgroundColor = [UIColor whiteColor];
-        UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage yj_imageNamed:@"statusView_empty"]];
+        UIImageView *img = [[UIImageView alloc]initWithImage:[UIImage yj_imageNamed:@"statusView_empty" atBundle:[YJSearchManager defaultManager].searchBundle]];
         [_viewNoData addSubview:img];
         __weak typeof(self) weakSelf = self;
         [img mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -104,7 +106,7 @@
         _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _backBtn.frame = CGRectMake(0, 0, 28, 28);
         [_backBtn setImageEdgeInsets: UIEdgeInsetsMake(0, -15, 0, 0)];
-        [_backBtn setImage:[UIImage yj_imageNamed:@"navibar_back"] forState:UIControlStateNormal];
+        [_backBtn setImage:[UIImage yj_imageNamed:@"navibar_back" atBundle:[YJSearchManager defaultManager].searchBundle] forState:UIControlStateNormal];
         [_backBtn addTarget:self action:@selector(navBar_leftItemPressed) forControlEvents:UIControlEventTouchUpInside];
     }
     return _backBtn;

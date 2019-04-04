@@ -323,23 +323,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/LGAlertHUD/LGAlertHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/TFHpple/TFHpple.framework",
-				"${BUILT_PRODUCTS_DIR}/YJExtensions/YJExtensions.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGAlertHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TFHpple.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YJExtensions.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3D7449C9CD9FEBFE954F18DC /* [CP] Check Pods Manifest.lock */ = {
@@ -535,7 +528,10 @@
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = YJSearchControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.YJSearchControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,7 +547,10 @@
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = YJSearchControllerDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.YJSearchControllerDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

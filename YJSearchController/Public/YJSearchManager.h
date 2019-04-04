@@ -19,11 +19,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,strong) NSArray *searchMatchArray;
 /** 启动搜索视图的控制器名 */
 @property (copy, nonatomic) NSString *searchControllerName;
-
+/** 搜索提示语 */
+@property (nonatomic,copy) NSString *searchPlaceholder;
 /** 搜索输入内容 */
 @property (nonatomic,copy) void (^searchStrBlock) (NSString *searchStr);
 
 + (YJSearchManager *)defaultManager;
+
+- (NSBundle *)searchBundle;
 
 - (void)presentSearchControllerBy:(UIViewController *)controller;
 @end
