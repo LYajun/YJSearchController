@@ -7,16 +7,16 @@
 #ifndef _YJPinyinHelper_H_
 #define _YJPinyinHelper_H_
 
-@class HanyuPinyinOutputFormat;
+@class YJHanyuPinyinOutputFormat;
 
 @interface YJPinyinHelper : NSObject {
 }
 
 + (NSArray *)toHanyuPinyinStringArrayWithChar:(unichar)ch;
 + (NSArray *)toHanyuPinyinStringArrayWithChar:(unichar)ch
-                         withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat;
+                         withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat;
 + (NSArray *)getFormattedHanyuPinyinStringArrayWithChar:(unichar)ch
-                                   withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat;
+                                   withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat;
 + (NSArray *)getUnformattedHanyuPinyinStringArrayWithChar:(unichar)ch;
 + (NSArray *)toTongyongPinyinStringArrayWithChar:(unichar)ch;
 + (NSArray *)toWadeGilesPinyinStringArrayWithChar:(unichar)ch;
@@ -27,10 +27,10 @@
 + (NSArray *)toGwoyeuRomatzyhStringArrayWithChar:(unichar)ch;
 + (NSArray *)convertToGwoyeuRomatzyhStringArrayWithChar:(unichar)ch;
 + (NSString *)toHanyuPinyinStringWithNSString:(NSString *)str
-                  withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat
+                  withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat
                                  withNSString:(NSString *)seperater;
 + (NSString *)getFirstHanyuPinyinStringWithChar:(unichar)ch
-                    withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat;
+                    withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat;
 - (id)init;
 @end
 

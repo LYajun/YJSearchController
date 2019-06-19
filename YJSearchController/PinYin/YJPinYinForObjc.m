@@ -17,9 +17,7 @@
     [outputFormat setVCharType:VCharTypeWithV];
     [outputFormat setCaseType:CaseTypeLowercase];
     NSString *outputPinyin = [YJPinyinHelper toHanyuPinyinStringWithNSString:sourceText withHanyuPinyinOutputFormat:outputFormat withNSString:@""];
-    
     return outputPinyin;
-    
     
 }
 + (NSArray *)chineseArrayConvertToPinYinArray:(NSArray *)chineseArray{

@@ -23,12 +23,12 @@
 }
 
 + (NSArray *)toHanyuPinyinStringArrayWithChar:(unichar)ch
-                  withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat {
+                  withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat {
     return [YJPinyinHelper getFormattedHanyuPinyinStringArrayWithChar:ch withHanyuPinyinOutputFormat:outputFormat];
 }
 
 + (NSArray *)getFormattedHanyuPinyinStringArrayWithChar:(unichar)ch
-                            withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat {
+                            withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat {
     NSMutableArray *pinyinStrArray =[NSMutableArray arrayWithArray:[YJPinyinHelper getUnformattedHanyuPinyinStringArrayWithChar:ch]];
     if (nil != pinyinStrArray) {
         for (int i = 0; i < (int) [pinyinStrArray count]; i++) {
@@ -89,7 +89,7 @@
 }
 
 + (NSString *)toHanyuPinyinStringWithNSString:(NSString *)str
-                  withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat
+                  withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat
                                  withNSString:(NSString *)seperater {
     NSMutableString *resultPinyinStrBuf = [[NSMutableString alloc] init];
     for (int i = 0; i <  str.length; i++) {
@@ -108,7 +108,7 @@
 }
 
 + (NSString *)getFirstHanyuPinyinStringWithChar:(unichar)ch
-                    withHanyuPinyinOutputFormat:(HanyuPinyinOutputFormat *)outputFormat {
+                    withHanyuPinyinOutputFormat:(YJHanyuPinyinOutputFormat *)outputFormat {
     NSArray *pinyinStrArray = [YJPinyinHelper getFormattedHanyuPinyinStringArrayWithChar:ch withHanyuPinyinOutputFormat:outputFormat];
     if ((nil != pinyinStrArray) && ((int) [pinyinStrArray count] > 0)) {
         return [pinyinStrArray objectAtIndex:0];

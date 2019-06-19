@@ -39,7 +39,7 @@
     UILabel *titleLab = [UILabel new];
     titleLab.text = @"历史记录";
     titleLab.textColor = [UIColor lightGrayColor];
-    titleLab.font = [UIFont systemFontOfSize:16];
+    titleLab.font = [UIFont systemFontOfSize:14];
     [headerView addSubview:titleLab];
     [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(headerView);

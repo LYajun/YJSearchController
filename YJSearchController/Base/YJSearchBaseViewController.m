@@ -83,15 +83,15 @@
         __weak typeof(self) weakSelf = self;
         [img mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(weakSelf.viewNoData);
-            make.centerY.equalTo(weakSelf.viewNoData).offset(-10);
-            make.width.equalTo(weakSelf.viewNoData).multipliedBy(0.6);
+            make.centerY.equalTo(weakSelf.viewNoData).offset(-20);
+            make.width.equalTo(weakSelf.viewNoData).multipliedBy(0.4);
             make.height.equalTo(img.mas_width).multipliedBy(0.93);
         }];
         UILabel *lab = [[UILabel alloc] init];
         lab.tag = 11;
         lab.font = [UIFont systemFontOfSize:14];
         lab.textAlignment = NSTextAlignmentCenter;
-        lab.textColor = [UIColor yj_colorWithHex:0x666666];
+        lab.textColor = [UIColor yj_colorWithHex:0x989898];
         lab.text = @"搜一搜";
         [_viewNoData addSubview:lab];
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
