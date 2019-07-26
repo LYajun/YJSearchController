@@ -46,11 +46,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.backBtn];
 }
 - (void)navBar_leftItemPressed{
-    UIViewController * presentingViewController = self.presentingViewController;
-    while (presentingViewController.presentingViewController) {
-        presentingViewController = presentingViewController.presentingViewController;
-    }
-    [presentingViewController dismissViewControllerAnimated:NO completion:nil];
+    [self dismissViewControllerAnimated:NO completion:nil];
 }
 - (void)setViewNoDataShow:(BOOL)show{
      [self setShowOnBackgroundView:self.viewNoData show:show];
@@ -83,16 +79,14 @@
         __weak typeof(self) weakSelf = self;
         [img mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.equalTo(weakSelf.viewNoData);
-            make.centerY.equalTo(weakSelf.viewNoData).offset(-20);
-            make.width.equalTo(weakSelf.viewNoData).multipliedBy(0.4);
-            make.height.equalTo(img.mas_width).multipliedBy(0.93);
+            make.centerY.equalTo(weakSelf.viewNoData).offset(-40);
         }];
         UILabel *lab = [[UILabel alloc] init];
         lab.tag = 11;
         lab.font = [UIFont systemFontOfSize:14];
         lab.textAlignment = NSTextAlignmentCenter;
         lab.textColor = [UIColor yj_colorWithHex:0x989898];
-        lab.text = @"搜一搜";
+        lab.text = @"无搜索记录";
         [_viewNoData addSubview:lab];
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.width.equalTo(self.viewNoData);
