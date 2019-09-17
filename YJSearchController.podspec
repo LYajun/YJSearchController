@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YJSearchController"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "搜索"
 
 

@@ -8,16 +8,18 @@
 
 #import "YJSearchRecordViewController.h"
 #import "YJSearchRecordManager.h"
-#import "YJSearchRecordCell.h"
-#import "YJSearchRecordFooterView.h"
+//#import "YJSearchRecordCell.h"
+//#import "YJSearchRecordFooterView.h"
 
 #import <Masonry/Masonry.h>
 #import <YJExtensions/YJExtensions.h>
+#import "YJSearchRecordFlowLayout.h"
+#import "YJSearchRecordFlowCell.h"
 
-@interface YJSearchRecordViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong,nonatomic) UITableView *tableView;
+@interface YJSearchRecordViewController ()<YJSearchRecordFlowLayoutDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
+@property (nonatomic,strong) UICollectionView *collectionView;
 @property (strong,nonatomic) NSArray *recordArr;
-
+@property (nonatomic,strong) UIButton *clearBtn;
 @end
 
 @implementation YJSearchRecordViewController
@@ -37,17 +39,25 @@
     [headerView layoutIfNeeded];
     
     UILabel *titleLab = [UILabel new];
-    titleLab.text = @"历史记录";
+    titleLab.text = @"搜索历史";
     titleLab.textColor = [UIColor lightGrayColor];
-    titleLab.font = [UIFont systemFontOfSize:14];
+    titleLab.font = [UIFont systemFontOfSize:15];
     [headerView addSubview:titleLab];
     [titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(headerView);
         make.left.equalTo(headerView.mas_left).offset(10);
     }];
     
-    [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [headerView addSubview:self.clearBtn];
+    [self.clearBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(headerView);
+        make.right.equalTo(headerView).offset(-10);
+        make.height.mas_equalTo(26);
+        make.width.mas_equalTo(64);
+    }];
+    
+    [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(headerView.mas_bottom);
         make.left.bottom.right.equalTo(self.view);
     }];
@@ -60,7 +70,7 @@
     [dic removeObjectForKey:[YJSearchRecordManager defaultManager].searchControllerName];
     [[YJSearchRecordManager defaultManager] writeSearchRecordWithRecordDic:dic];
     [self updateEmpty];
-    [self.tableView reloadData];
+    [self.collectionView reloadData];
 }
 - (void)updateEmpty{
     if (!self.recordArr || self.recordArr.count == 0) {
@@ -69,57 +79,43 @@
          [self setViewNoDataShow:NO];
     }
 }
-#pragma mark UITableView Delegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+#pragma mark - UICollectionViewDelegate,UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 1;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.recordArr.count;
 }
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 44;
-}
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 44;
-}
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    YJSearchRecordFooterView *footerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:NSStringFromClass([YJSearchRecordFooterView class])];
-    __weak typeof(self) weakSelf = self;
-    footerView.clearRecordBlock = ^{
-        [weakSelf clearBtnAction];
-    };
-    return footerView;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    YJSearchRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([YJSearchRecordCell class])];
-    cell.isShowSeparator = YES;
-    if (indexPath.row == self.recordArr.count-1) {
-        cell.separatorOffset = 0;
-        cell.sepColor = [UIColor yj_colorWithHex:0xD7D7D7];
-    }else{
-        cell.separatorOffset = 10;
-        cell.sepColor = [UIColor yj_colorWithHex:0xF0F0F0];
-    }
-    cell.titleStr = self.recordArr[indexPath.row];
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    YJSearchRecordFlowCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([YJSearchRecordFlowCell class]) forIndexPath:indexPath];
+    cell.text = self.recordArr[indexPath.row];
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString *record = self.recordArr[indexPath.row];
     self.recordBlock(record);
 }
-#pragma mark Property Init
-- (UITableView *)tableView{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.rowHeight = 44;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[YJSearchRecordCell class] forCellReuseIdentifier:NSStringFromClass([YJSearchRecordCell class])];
-        [_tableView registerClass:[YJSearchRecordFooterView class] forHeaderFooterViewReuseIdentifier:NSStringFromClass([YJSearchRecordFooterView class])];
+#pragma mark - YJSearchRecordFlowLayoutDelegate
+- (CGFloat)lg_layout:(YJSearchRecordFlowLayout *)layout widthForItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *str = self.recordArr[indexPath.row];
+    CGSize stringSize = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 35) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16]} context:nil].size;
+    return stringSize.width+16;
+}
+
+#pragma mark - Property Init
+- (UICollectionView *)collectionView{
+    if (!_collectionView) {
+        YJSearchRecordFlowLayout *layout = [[YJSearchRecordFlowLayout alloc] init];
+        layout.itemHeight = 35;
+        layout.topInset = 1;
+        layout.delegate = self;
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _collectionView.backgroundColor = [UIColor clearColor];
+        _collectionView.dataSource = self;
+        _collectionView.delegate = self;
+        [_collectionView registerClass:[YJSearchRecordFlowCell class] forCellWithReuseIdentifier:NSStringFromClass([YJSearchRecordFlowCell class])];
     }
-    return _tableView;
+    return _collectionView;
 }
 - (NSArray *)recordArr{
     NSDictionary *dic = [[YJSearchRecordManager defaultManager] readSearchRecord];
@@ -129,5 +125,15 @@
         _recordArr = nil;
     }
     return _recordArr;
+}
+- (UIButton *)clearBtn{
+    if (!_clearBtn) {
+        _clearBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_clearBtn setTitle:@"清空历史" forState:UIControlStateNormal];
+        _clearBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+        [_clearBtn setTitleColor:[UIColor yj_colorWithHex:0x009AFC] forState:UIControlStateNormal];
+        [_clearBtn addTarget:self action:@selector(clearBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _clearBtn;
 }
 @end

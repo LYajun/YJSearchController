@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		492F9F1ABDD14EAE0467144D /* Pods_YJSearchControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 209036A78402783842A2D319 /* Pods_YJSearchControllerDemo.framework */; };
+		BA14F2572330D6A2001E5891 /* YJSearchRecordFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA14F2552330D6A1001E5891 /* YJSearchRecordFlowLayout.m */; };
+		BA14F25A2330D767001E5891 /* YJSearchRecordFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA14F2582330D767001E5891 /* YJSearchRecordFlowCell.m */; };
 		BA21818F22530017009DE9F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21818E22530017009DE9F4 /* AppDelegate.m */; };
 		BA21819222530017009DE9F4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA21819122530017009DE9F4 /* ViewController.m */; };
 		BA21819522530017009DE9F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA21819322530017009DE9F4 /* Main.storyboard */; };
@@ -39,6 +41,10 @@
 /* Begin PBXFileReference section */
 		209036A78402783842A2D319 /* Pods_YJSearchControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YJSearchControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B86B8AB068B22E1167DCDCAC /* Pods-YJSearchControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJSearchControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YJSearchControllerDemo/Pods-YJSearchControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BA14F2552330D6A1001E5891 /* YJSearchRecordFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordFlowLayout.m; sourceTree = "<group>"; };
+		BA14F2562330D6A1001E5891 /* YJSearchRecordFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordFlowLayout.h; sourceTree = "<group>"; };
+		BA14F2582330D767001E5891 /* YJSearchRecordFlowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSearchRecordFlowCell.m; sourceTree = "<group>"; };
+		BA14F2592330D767001E5891 /* YJSearchRecordFlowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSearchRecordFlowCell.h; sourceTree = "<group>"; };
 		BA21818A22530017009DE9F4 /* YJSearchControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJSearchControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA21818D22530017009DE9F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA21818E22530017009DE9F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -187,12 +193,16 @@
 		BA2181C222530AED009DE9F4 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				BA14F2562330D6A1001E5891 /* YJSearchRecordFlowLayout.h */,
+				BA14F2552330D6A1001E5891 /* YJSearchRecordFlowLayout.m */,
 				BA2181D82253336C009DE9F4 /* YJSearchRecordViewController.h */,
 				BA2181D92253336C009DE9F4 /* YJSearchRecordViewController.m */,
 				BA2181E422535081009DE9F4 /* YJSearchRecordFooterView.h */,
 				BA2181E522535081009DE9F4 /* YJSearchRecordFooterView.m */,
 				BA2181E12253503C009DE9F4 /* YJSearchRecordCell.h */,
 				BA2181E22253503C009DE9F4 /* YJSearchRecordCell.m */,
+				BA14F2592330D767001E5891 /* YJSearchRecordFlowCell.h */,
+				BA14F2582330D767001E5891 /* YJSearchRecordFlowCell.m */,
 				BA2181DB225338FF009DE9F4 /* YJSearchRecordManager.h */,
 				BA2181DC225338FF009DE9F4 /* YJSearchRecordManager.m */,
 			);
@@ -362,6 +372,7 @@
 			files = (
 				BA2181D122532DAD009DE9F4 /* YJSearchBaseViewController.m in Sources */,
 				BA2181B92253056F009DE9F4 /* YJChineseInclude.m in Sources */,
+				BA14F25A2330D767001E5891 /* YJSearchRecordFlowCell.m in Sources */,
 				BA2181B82253056F009DE9F4 /* YJPinyinHelper.m in Sources */,
 				BA21819222530017009DE9F4 /* ViewController.m in Sources */,
 				BA2181B62253056F009DE9F4 /* NSString+YJPinYin4Cocoa.m in Sources */,
@@ -372,6 +383,7 @@
 				BA2181CE22532D98009DE9F4 /* YJSearchBaseNavigationController.m in Sources */,
 				BA21819D2253001A009DE9F4 /* main.m in Sources */,
 				BA2181BB2253056F009DE9F4 /* YJChineseToPinyinResource.m in Sources */,
+				BA14F2572330D6A2001E5891 /* YJSearchRecordFlowLayout.m in Sources */,
 				BA2181CB22531226009DE9F4 /* YJSearchManager.m in Sources */,
 				BA2181DA2253336C009DE9F4 /* YJSearchRecordViewController.m in Sources */,
 				BA2181BD2253056F009DE9F4 /* YJPinYinForObjc.m in Sources */,

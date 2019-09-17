@@ -77,6 +77,7 @@
 }
 
 - (void)searchBtnAction:(UIButton *) btn{
+    [self.searchBar resignFirstResponder];
     if (self.searchBar.text.length > 0) {
         if ([YJSearchManager defaultManager].searchStrBlock) {
             [YJSearchManager defaultManager].searchStrBlock(self.searchBar.text);

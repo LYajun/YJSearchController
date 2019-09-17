@@ -86,11 +86,11 @@
         lab.font = [UIFont systemFontOfSize:14];
         lab.textAlignment = NSTextAlignmentCenter;
         lab.textColor = [UIColor yj_colorWithHex:0x989898];
-        lab.text = @"无搜索记录";
+        lab.text = @"暂无搜索历史";
         [_viewNoData addSubview:lab];
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.width.equalTo(self.viewNoData);
-            make.top.equalTo(img.mas_bottom).offset(18);
+            make.top.equalTo(img.mas_bottom).offset(-20);
         }];
     }
     return _viewNoData;
