@@ -9,7 +9,7 @@
 #import "YJSearchRecordFlowLayout.h"
 
 #define YJSearchScreenW [UIScreen mainScreen].bounds.size.width
-NSString* const layoutCellKind = @"WaterfallCell";
+NSString* const YJSearchLayoutCellKind = @"WaterfallCell";
 @interface YJSearchRecordFlowLayout ()
 @property (nonatomic) NSArray *sectionRows; // 分区行数
 @property (nonatomic) CGFloat itemInnerMargin; // 内部间距
@@ -104,7 +104,7 @@ NSString* const layoutCellKind = @"WaterfallCell";
     return allAttributes;
 }
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.layoutInfo[layoutCellKind][indexPath];
+    return self.layoutInfo[YJSearchLayoutCellKind][indexPath];
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)kind
@@ -259,7 +259,7 @@ NSString* const layoutCellKind = @"WaterfallCell";
             titleLayoutInfo[indexPath] = titleAttributes;
         }
     }
-    newLayoutInfo[layoutCellKind] = cellLayoutInfo;
+    newLayoutInfo[YJSearchLayoutCellKind] = cellLayoutInfo;
     newLayoutInfo[UICollectionElementKindSectionHeader] = titleLayoutInfo;
     self.layoutInfo = [NSDictionary dictionaryWithDictionary:newLayoutInfo];
 }

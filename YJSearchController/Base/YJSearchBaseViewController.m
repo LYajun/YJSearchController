@@ -90,7 +90,7 @@
         [_viewNoData addSubview:lab];
         [lab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.width.equalTo(self.viewNoData);
-            make.top.equalTo(img.mas_bottom).offset(-20);
+            make.top.equalTo(img.mas_bottom).offset(-30);
         }];
     }
     return _viewNoData;
