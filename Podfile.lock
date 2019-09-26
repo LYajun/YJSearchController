@@ -2,18 +2,18 @@ PODS:
   - LGAlertHUD (1.0.1)
   - Masonry (1.1.0)
   - TFHpple (2.0.0)
-  - YJExtensions (1.0.6):
-    - YJExtensions/Foundation (= 1.0.6)
-    - YJExtensions/UIKit (= 1.0.6)
-  - YJExtensions/Foundation (1.0.6):
+  - YJExtensions (1.1.7):
+    - YJExtensions/Foundation (= 1.1.7)
+    - YJExtensions/UIKit (= 1.1.7)
+  - YJExtensions/Foundation (1.1.7):
     - TFHpple
-  - YJExtensions/UIKit (1.0.6):
+  - YJExtensions/UIKit (1.1.7):
     - YJExtensions/Foundation
 
 DEPENDENCIES:
   - LGAlertHUD
   - Masonry
-  - YJExtensions (= 1.0.6)
+  - YJExtensions (= 1.1.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -26,8 +26,8 @@ SPEC CHECKSUMS:
   LGAlertHUD: 067a33dbdff0e4142248c342f65f3a7ceaff241b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   TFHpple: a916fe0799eb30aa29b2670d14d5868cdd3a5b81
-  YJExtensions: a7d0db18eebc9c9a08ca31be8b1c51afb21fb575
+  YJExtensions: ceb71a840c3276cd4f9d100884de9b0e4dea67f7
 
-PODFILE CHECKSUM: 8ff8c57980d689c34fd5f4ffb9e97021ab7ae838
+PODFILE CHECKSUM: 1bfe7419c817319d8bf2a76e1b6b79f292facff6
 
 COCOAPODS: 1.7.0.beta.3

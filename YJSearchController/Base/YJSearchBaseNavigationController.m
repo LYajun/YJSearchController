@@ -26,7 +26,9 @@
 - (void)customInit{
     self.navigationBar.translucent = NO;
     NSString *imageName = @"lg_navBar_bg";
-    if ([self.view yj_isIPhoneX]) {
+    if ([self.view yj_isIPAD]) {
+        imageName = @"lg_navBar_bg_ipad";
+    }else if ([self.view yj_isIPhoneX]) {
         imageName = @"lg_navBar_bg_x";
     }
     [self.navigationBar setBackgroundImage:[UIImage yj_imageNamed:imageName atBundle:[YJSearchManager defaultManager].searchBundle]
